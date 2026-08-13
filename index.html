@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenChat</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <main>
+        <nav id="navbar">
+            <!-- TODO: Pretty up the buttons to fit the DOS style that opencode has -->
+            <a href="#">
+                Home
+            </a>
+            <a href="./about/index.html">
+                About Us
+            </a>
+            <a href="./contact/index.html">
+                Contact Us
+            </a>
+        </nav>
+        <section id="chat">
+            <div id="banner">
+                <svg width="195" height="35" viewBox="0 0 195 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0 5H20V10H0V5ZM0 10H5V15H0V10ZM15 10H20V15H15V10ZM25 5H45V10H25V5ZM25 10H30V15H25V10ZM25 30H30V35H25V30ZM40 10H45V15H40V10ZM50 5H70V10H50V5ZM50 10H55V15H50V10ZM65 10H70V15H65V10ZM75 5H95V10H75V5ZM75 10H80V15H75V10ZM90 10H95V15H90V10ZM100 5H120V10H100V5ZM100 10H105V15H100V10ZM125 0H130V10H125V0ZM125 10H145V15H125V10ZM150 5H170V10H150V5ZM165 10H170V15H165V10ZM175 5H195V10H175V5ZM180 0H185V5H180V0ZM180 10H185V15H180V10Z"
+                        fill="#F1ECEC" />
+                    <path
+                        d="M0 15H5V25H0V15ZM0 25H20V30H0V25ZM15 15H20V25H15V15ZM25 15H30V25H25V15ZM25 25H45V30H25V25ZM40 15H45V25H40V15ZM50 15H70V20H50V15ZM50 20H55V25H50V20ZM50 25H70V30H50V25ZM75 15H80V30H75V15ZM90 15H95V30H90V15ZM100 15H105V25H100V15ZM100 25H120V30H100V25ZM125 15H130V30H125V15ZM140 15H145V30H140V15ZM150 15H170V20H150V15ZM150 20H155V25H150V20ZM150 25H170V30H150V25ZM165 20H170V25H165V20ZM180 15H185V25H180V15ZM180 25H190V30H180V25Z"
+                        fill="#B7B1B1" />
+                </svg>
+            </div>
+            <div id="chatbox">
+                <span id="chatbox-line"> </span>
+                <div id="chatbox-input">
+                    <input id="message-input" type="text" placeholder="Send anything..." aria-label="Message input">
+                    <span>Send • Anonymous <i>Press Enter to send a message.</i></span>
+                </div>
+            </div>
+            <div id="chat-messages"></div>
+        </section>
+        <footer id="footer">
+            <div>~</div>
+            <div>1.0.0</div>
+        </footer>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
