@@ -18,6 +18,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 #navbar {
@@ -61,7 +62,10 @@ main {
 }
 
 #chat {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #banner {
