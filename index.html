@@ -38,8 +38,15 @@
                 <div id="chatbox-input">
                     <input id="username-input" type="text" placeholder="Your name" aria-label="Message input">
                     <input id="message-input" type="text" placeholder="Send anything..." aria-label="Message input">
-                    <span>Send • Anonymous <i>Press Enter to send a message.</i></span>
+                    <span id="chatbox-input-description">Send • Anonymous <i>Press Enter to send a message.</i></span>
                 </div>
+                
+                <div class="container">
+                    <label for="textColor">text color</label>
+                    <input type="color" name="textColor" id="primary_color" class="field-radio">
+                    <span class="container" id="color_val"></span>
+                </div>
+    
             </div>
             <div id="chat-messages"></div>
         </section>
