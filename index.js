@@ -1,5 +1,8 @@
 const chatFrame = document.getElementById('chat-messages')
 const input = document.getElementById('message-input')
+const userInput = document.getElementById("username-input")
+const colorButton = document.getElementById("primary_color");
+const colorDiv = document.getElementById("color_val");
 
 const firebaseConfig = {
     apiKey: "AIzaSyAdvIxi1jKQ8QiUZKtCrE5zPKWm8wo9_LE",
@@ -22,6 +25,7 @@ function normalizeMessage(message) {
 
     return {
         text: message.text || message.Title || '',
+        text_color : message.text_color ||  "#ffffff", //Alriks color
         author: message.author || 'Anonymous',
         timestamp,
     }
@@ -32,6 +36,7 @@ function renderMessage(message) {
 
     const wrapper = document.createElement('div')
     wrapper.className = 'message'
+    wrapper.style.color = normalized.text_color //Alriks color
 
     const topFrame = document.createElement('div')
     topFrame.className = 'message-top'
@@ -62,7 +67,8 @@ function sendMessage(text) {
 
     const newMessage = {
         text: trimmed,
-        author: 'Anonymous',
+        text_color: document.getElementById("primary_color").value,
+        author: userInput.value|| 'Anonymous' ,
         timestamp: new Date().toISOString(),
     }
 
@@ -105,3 +111,30 @@ input.addEventListener('keydown', (e) => {
         input.value = ''
     }
 })
+
+/* color button */
+/* init */
+changeColorBasedOnColorPicker()
+changeNameOnDescription() 
+
+colorButton.oninput = function() {
+    colorDiv.innerHTML = colorButton.value;
+    colorDiv.style.color = colorButton.value;
+    colorDiv.style.borderColor =colorButton.value;
+    colorButton.style.backgroundColor=colorButton.value;
+}
+function changeColorBasedOnColorPicker() {//ändrar färg på chatboxen vid color change
+    document.getElementById("chatbox-input").style.color=colorButton.value
+    colorButton.style.backgroundColor=colorButton.value;
+    userInput.style.color=colorButton.value
+}
+colorButton.onchange = changeColorBasedOnColorPicker
+
+/* namn change */
+function changeNameOnDescription() {
+    document.getElementById("chatbox-input-description").innerHTML = `Send • ${userInput.value|| `Anonymous` } <i>Press Enter to send a message.</i> `
+}
+userInput.onchange = changeNameOnDescription
+
+
+
