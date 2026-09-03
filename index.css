@@ -73,21 +73,25 @@ main {
     margin-bottom: 40px;
 }
 
-#chatbox {
-    justify-self: center;
-    width: 30%;
-    height: 5rem;
-
-    display: flex;
-    flex-direction: row;
-
-    padding-bottom: 1rem;
+#chatbox { /*Alrik större css*/
+	justify-self: center;
+	width: 40%;
+	height: 8rem;
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 1rem;
 }
 
 #chatbox-line {
     background-color: rgb(0, 98, 255);
     width: 2px;
     height: 100%;
+}
+
+#chatbox-input #username-input{
+    font-weight: bold;
+    font-size: 0.8rem;
+    height: 1rem;
 }
 
 #chatbox-input {

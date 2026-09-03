@@ -62,7 +62,7 @@ function sendMessage(text) {
 
     const newMessage = {
         text: trimmed,
-        author: 'Anonymous',
+        author: document.getElementById("username-input").value|| 'Anonymous' ,
         timestamp: new Date().toISOString(),
     }
 
